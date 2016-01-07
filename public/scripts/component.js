@@ -81,7 +81,7 @@ var BasicBox = React.createClass({
       "margin": "0"
     }
     return (
-      <div><div style={s} className="span2" onClick={this.markSquare}>{this.state.text}</div><div style={{"width": "10", "height": "10", "float": "left"}}> </div></div>
+      <div><div style={s} className="span2" onClick={this.markSquare}>{this.state.text}</div><div style={{"width": "15", "height": "10", "float": "left"}}> </div></div>
     )
   }
 })
