@@ -35,15 +35,15 @@ var BigBox = React.createClass({
   render: function() {
     return (
       <div>
-      <div>
-        <BasicBox toggleTurn={this.toggleTurn} id={1} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={2} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={3} firstTurn={this.state.firstPlayerTurn} />
-      </div><br /><br /><br />
-      <div>
-        <BasicBox toggleTurn={this.toggleTurn} id={4} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={5} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={6} firstTurn={this.state.firstPlayerTurn} />
-        </div><br /><br /><br />
         <div>
-        <BasicBox toggleTurn={this.toggleTurn} id={7} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={8} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={9} firstTurn={this.state.firstPlayerTurn} />
-      </div>
+          <BasicBox toggleTurn={this.toggleTurn} id={1} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={2} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={3} firstTurn={this.state.firstPlayerTurn} />
+        </div><br /><br /><br /><br />
+        <div>
+          <BasicBox toggleTurn={this.toggleTurn} id={4} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={5} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={6} firstTurn={this.state.firstPlayerTurn} />
+        </div><br /><br /><br /><br />
+        <div>
+          <BasicBox toggleTurn={this.toggleTurn} id={7} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={8} firstTurn={this.state.firstPlayerTurn} /><BasicBox toggleTurn={this.toggleTurn} id={9} firstTurn={this.state.firstPlayerTurn} />
+        </div>
       </div>
     )
   }
@@ -52,11 +52,11 @@ var BigBox = React.createClass({
 var BasicBox = React.createClass({
   getInitialState: function(){
     return {
-      text: "N"
+      text: ""
     }
   },
   markSquare: function(event){
-    if(this.state.text == "N"){
+    if(this.state.text == ""){
       if(this.props.firstTurn){
         this.setState({text: "X"}, function(){
           this.props.toggleTurn(this.props.id-1)
@@ -74,10 +74,14 @@ var BasicBox = React.createClass({
       "width": "100",
       "height": "75",
       "float": "left",
-      "border": "5"
+      "borderStyle": "solid",
+      "borderWidth": "5px",
+      "fontSize": "3em",
+      "padding": "0",
+      "margin": "0"
     }
     return (
-      <div style={s} className="span2" onClick={this.markSquare}>{this.state.text}</div>
+      <div><div style={s} className="span2" onClick={this.markSquare}>{this.state.text}</div><div style={{"width": "10", "height": "10", "float": "left"}}> </div></div>
     )
   }
 })
